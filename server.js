@@ -31,7 +31,7 @@ app.post('/api/chat', async (req, res) => {
         console.log(`📩 Processando pergunta: "${pergunta}"`);
 
         // Chama o modelo da IA (Se der erro 404, mude para "gemini-pro")
-        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
         
         const promptFinal = `Você é um robô sarcástico. Responda a seguinte pergunta: ${pergunta}`;
         
@@ -54,9 +54,8 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-// 5. Ligar o Servidor
-const PORTA = 3000;
+// A nuvem define a porta via process.env.PORT. Se não houver, usa a 3000 (local)
+const PORTA = process.env.PORT || 3000;
 app.listen(PORTA, () => {
-    console.log(`🚀 Servidor da IA rodando em http://localhost:${PORTA}`);
-    console.log(`📡 Rota disponível: POST http://localhost:${PORTA}/api/chat`);
+    console.log(`🚀 Servidor rodando na porta ${PORTA}`);
 });
