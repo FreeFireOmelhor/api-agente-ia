@@ -108,7 +108,7 @@ Essas tecnologias permitiram executar o sistema integralmente em ambiente cloud.
 ## 8. Link de Produção
 
 GitHub:
-(Adicionar URL)
+(https://github.com/FreeFireOmelhor/api-agente-ia.git)
 
 Backend:
 https://api-agente-ia-wr4g.onrender.com
